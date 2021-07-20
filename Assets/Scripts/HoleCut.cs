@@ -14,6 +14,6 @@ public class HoleCut : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("1" + collision.gameObject.name);
-        collision.transform.localScale = new Vector3(collision.transform.localScale.x - scaleSpeed, collision.transform.localScale.y, collision.transform.localScale.z);
+        collision.transform.localScale = new Vector3(collision.transform.localScale.x - scaleSpeed, collision.transform.localScale.y, collision.transform.localScale.z - scaleSpeed);
     }
 }

@@ -1322,6 +1322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385782582}
+  - component: {fileID: 385782583}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -1337,7 +1338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385782581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.894, y: -1.83, z: 5.359}
+  m_LocalPosition: {x: -3.894, y: -4.58, z: 2.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1274957406}
@@ -1439,6 +1440,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385782583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385782581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb6b34c22a8b2743bf870ca70c6d417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
 --- !u!1001 &408269316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3218,13 +3232,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.32700336, y: -0, z: -0, w: 0.94502324}
-  m_LocalPosition: {x: -2.67, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -2.67, y: 0.79, z: 1.585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 38.174, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &965001156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5832,8 +5846,10 @@ GameObject:
   - component: {fileID: 1730915089}
   - component: {fileID: 1730915088}
   - component: {fileID: 1730915087}
-  - component: {fileID: 1730915091}
   - component: {fileID: 1730915093}
+  - component: {fileID: 1730915091}
+  - component: {fileID: 1730915094}
+  - component: {fileID: 1730915092}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -5911,8 +5927,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730915086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.45, y: -1.63, z: 1.499}
-  m_LocalScale: {x: 0.2321, y: 1, z: 1}
+  m_LocalPosition: {x: -2.65, y: -4.58, z: -0.8}
+  m_LocalScale: {x: 0.32, y: 0.17, z: 1.35}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -5931,6 +5947,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   scaleSpeed: 0.03
+--- !u!114 &1730915092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730915086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea8d00aa98afa84cbfa6b96cd1e281c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZValues: {x: -2.4603, y: -0.89}
+  dragSpeed: 0.005
 --- !u!54 &1730915093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5943,10 +5973,23 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1730915094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730915086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70e89636950d1940b77ad41d8556104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedModifier: 3
 --- !u!1001 &1754988588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7331,5 +7374,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 435575456810883248, guid: 22d2eb910a86ea64b9f85c70c1e6a4f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22d2eb910a86ea64b9f85c70c1e6a4f5, type: 3}
