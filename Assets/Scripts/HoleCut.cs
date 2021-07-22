@@ -15,7 +15,7 @@ public class HoleCut : MonoBehaviour
     private void Start()
     {
         wood = GameObject.Find("Wood");
-        IntializeWoodArray();
+        InitializeWoodArray();
     }
 
     private void OnCollisionStay(Collision collision)
@@ -24,7 +24,7 @@ public class HoleCut : MonoBehaviour
             collision.transform.localScale = new Vector3(collision.transform.localScale.x - scaleSpeed, collision.transform.localScale.y, collision.transform.localScale.z - scaleSpeed);
     }
 
-    private void IntializeWoodArray()
+    private void InitializeWoodArray()
     {
         _woodParts = new GameObject[wood.transform.childCount];
         for (int i = 0; i < wood.transform.childCount; i++)
@@ -53,6 +53,7 @@ public class HoleCut : MonoBehaviour
         var Parent = new GameObject();
         Parent.name = "SmallPart";
         int counter;
+        InitializeWoodArray();
         for (int i = 0; i < _woodParts.Length; i++)
         {
             Debug.Log("collision.transform.name " + collision.transform.name);
@@ -100,7 +101,7 @@ public class HoleCut : MonoBehaviour
             parent.AddComponent(typeof(Rigidbody));
             yield return new WaitForSecondsRealtime(3);
             Destroy(parent);
-            IntializeWoodArray();
+            InitializeWoodArray();
             yield break;
         }
     }
