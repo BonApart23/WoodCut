@@ -17,7 +17,7 @@ public class InstrumentMove : MonoBehaviour
                 transform.position = new Vector3(
                     transform.position.x + _touch.deltaPosition.x * speedModifier,
                     transform.position.y,
-                    transform.position.x + _touch.deltaPosition.x * speedModifier);
+                    transform.position.z + _touch.deltaPosition.y * speedModifier);
             }
         }
     }
